@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  FlatList, StyleSheet
-} from 'react-native';
-import { SIZES } from '../../constants';
-import { Restaurant } from '../../types';
-import { HomeRestaurantItem } from './HomeRestaurantItem';
+import {FlatList, StyleSheet} from 'react-native';
+import {SIZES} from '../../constants';
+import {Restaurant} from '../../types';
+import {HomeRestaurantItem} from './HomeRestaurantItem';
 
 type HomeRestaurantsListProps = {
   restaurants: Restaurant[];
@@ -16,12 +14,7 @@ export const HomeRestaurantsList = ({
   onPress,
 }: HomeRestaurantsListProps) => {
   function renderItem({item}: {item: Restaurant}) {
-    return (
-      <HomeRestaurantItem 
-        item={item} 
-        onPress={(item) => onPress(item)} 
-      />
-    );
+    return <HomeRestaurantItem item={item} onPress={(item) => onPress(item)} />;
   }
 
   return (
@@ -37,6 +30,6 @@ export const HomeRestaurantsList = ({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: SIZES.padding * 2,
-    paddingBottom: 30
+    paddingBottom: 30,
   },
 });
